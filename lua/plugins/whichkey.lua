@@ -4,19 +4,26 @@ return {
         event = "VeryLazy",
         opts = {},
         keys = {
-	    {
-		"<leader>s",
-		function()
-			require("which-key").show({ global = false })
-		end,
-		desc = "Telescope [s]earch",
+            {
+                "<leader>s",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "Telescope [s]earch",
             },
-	    {
-		"<leader>g",
-		function()
-			require("which-key").show({ global = false })
-		end,
-		desc = "[g]it commands",
+            {
+                "<leader>g",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "[g]it commands",
+            },
+            {
+                "<leader>b",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "[b]uffer operations",
             },
         },
     }

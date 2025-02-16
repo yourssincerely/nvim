@@ -12,6 +12,19 @@ vim.keymap.set("n", "<leader>sc", telescope.commands, { desc = "[s]earch [c]omma
 vim.keymap.set("n", "<leader>sr", telescope.oldfiles, { desc = "[s]earch [r]ecent files" })
 vim.keymap.set("n", "<leader>gs", telescope.git_status, { desc = "[g]it [s]tatus" })
 vim.keymap.set("n", "<leader>gc", telescope.git_commits, { desc = "[g]it [c]ommits" })
+-- Buffers
+vim.keymap.set("n", "<leader>bn", ":enew<CR>", { desc = "[b]uffer [n]ew" })
+vim.keymap.set("n", "<leader>bd", function()
+    local buf = vim.fn.bufnr("%")
+    local confirm = vim.fn.input("Delete buffer " .. buf .. "? (y/n): ")
+    if confirm == "y" then
+        vim.cmd("bdelete")
+    end
+end, { desc = "[b]uffer [d]elete" })
+vim.keymap.set("n", "<leader>bD", ":%bd|e#|bd#<CR>", { desc = "[b]uffer [D]elete all" })
+vim.keymap.set("n", "<leader>bs", ":Telescope buffers<CR>", { desc = "[b]uffers [s]how" })
+vim.keymap.set("n", "<leader>bk", ":bprevious<CR>", { desc = "[b]uffer previous [k]" })
+vim.keymap.set("n", "<leader>bj", ":bnext<CR>", { desc = "[b]uffer next [j]" })
 ---- Motions
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
