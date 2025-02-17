@@ -23,6 +23,7 @@ return {
                     "lua_ls",
                     "yamlls",
                     "terraformls",
+                    "rnix",
                 },
                 automatic_installation = true,
             })
@@ -36,6 +37,7 @@ return {
             require("lspconfig").lua_ls.setup({})
             require("lspconfig").yamlls.setup({})
             require("lspconfig").terraformls.setup({})
+            require("lspconfig").rnix.setup({})
         end,
     },
 }
