@@ -12,6 +12,12 @@ vim.keymap.set("n", "<leader>sc", telescope.commands, { desc = "[s]earch [c]omma
 vim.keymap.set("n", "<leader>sr", telescope.oldfiles, { desc = "[s]earch [r]ecent files" })
 vim.keymap.set("n", "<leader>gs", telescope.git_status, { desc = "[g]it [s]tatus" })
 vim.keymap.set("n", "<leader>gc", telescope.git_commits, { desc = "[g]it [c]ommits" })
+-- mini.completion
+local imap_expr = function(lhs, rhs)
+    vim.keymap.set('i', lhs, rhs, { expr = true })
+end
+imap_expr('<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]])
+imap_expr('<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]])
 -- Buffers
 vim.keymap.set("n", "<leader>bn", ":enew<CR>", { desc = "[b]uffer [n]ew" })
 vim.keymap.set("n", "<leader>bd", function()
