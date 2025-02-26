@@ -36,7 +36,10 @@ return {
             require("lspconfig").html.setup({})
             require("lspconfig").lua_ls.setup({})
             require("lspconfig").yamlls.setup({})
-            require("lspconfig").terraformls.setup({})
+            require("lspconfig").terraformls.setup({
+                on_attach = on_attach,
+                capabilities = vim.lsp.protocol.make_client_capabilities(),
+            })
             require("lspconfig").rnix.setup({})
         end,
     },
