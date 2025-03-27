@@ -6,8 +6,9 @@ local imap_expr = function(lhs, rhs)
 end
 imap_expr('<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]])
 imap_expr('<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]])
--- mini.pick
-vim.api.nvim_set_keymap('n', '<Leader>p', ':lua require("mini.pick").start()<CR>', { noremap = true, silent = true })
+-- telescope 
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", { noremap = true, silent = true })
 -- Buffers
 vim.keymap.set("n", "<leader>bn", ":enew<CR>", { desc = "[b]uffer [n]ew" })
 vim.keymap.set("n", "<leader>bd", function()
