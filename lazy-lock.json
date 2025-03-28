@@ -2,11 +2,12 @@
   "base16-nvim": { "branch": "master", "commit": "3f13e15c53ea2aaf79c24ceab725309d87f0619c" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "mini.completion": { "branch": "main", "commit": "9e6aa17fef2e86d3f33666a7843b942791cc1c1f" },
-  "mini.diff": { "branch": "main", "commit": "bc3a7be30fd45ed4961ea90de1d9d04637cdeae6" },
+  "mini.diff": { "branch": "main", "commit": "fcde3f00a32437ffebad23d357564d7c4df9f18e" },
   "mini.icons": { "branch": "main", "commit": "86a633f0dffcfd80110bac86681dbf4b5c37ba5c" },
   "mini.pairs": { "branch": "main", "commit": "b90e36aa5ca5e0d825e77ad67aac22214a4d9096" },
   "mini.statusline": { "branch": "main", "commit": "ec3adf7813b7604275dd4a28433e9c9610b70f1b" },
   "mini.trailspace": { "branch": "main", "commit": "9bbbf568c06fe424dc21d2c228fa76098008a5f3" },
+  "nvim-lspconfig": { "branch": "master", "commit": "85e0dd26b710e834a105d679200d01e326a3d2b0" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "telescope.nvim": { "branch": "master", "commit": "a4ed82509cecc56df1c7138920a1aeaf246c0ac5" }
 }
