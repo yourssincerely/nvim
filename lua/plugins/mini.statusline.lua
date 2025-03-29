@@ -46,15 +46,45 @@ return {
             local git_status = vim.fn.system("git status --porcelain 2>/dev/null")
             git_branch = vim.trim(git_branch)
             git_status = vim.trim(git_status)
-            if git_branch ~= "" then
-                local git_indicator = " " .. git_branch
-                if git_status ~= "" then
-                    return git_indicator .. " (modified)"
-                else
-                    return git_indicator
+
+            if git_branch == "" then
+                return ""
+            end
+
+            local git_indicator = " " .. git_branch
+
+            local changes = {}
+            local behind = false
+            local modified = false
+            local untracked = false
+
+            for line in git_status:gmatch("[^\n]+") do
+                local status = line:sub(1, 2)
+                if status == "A " then
+                    table.insert(changes, "A")
+                elseif status == "M " then
+                    table.insert(changes, "M")
+                    modified = true
+                elseif status == "D " then
+                    table.insert(changes, "D")
+                elseif status == "??" then
+                    table.insert(changes, "??")
+                    untracked = true
                 end
             end
-            return ""
+
+            if #changes == 0 then
+                return git_indicator .. " ✅"
+            end
+
+            local change_text = table.concat(changes, ", ")
+            if modified then
+                return git_indicator .. " 🐾" .. " (" .. change_text .. ")"
+            elseif untracked then
+                return git_indicator .. " 🔧" .. " (" .. change_text .. ")"
+            else
+                return git_indicator .. " ⚡" .. " (" .. change_text .. ")"
+            end
         end
 
         local active_statusline = function()
