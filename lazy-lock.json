@@ -1,5 +1,6 @@
 {
   "base16-nvim": { "branch": "master", "commit": "3f13e15c53ea2aaf79c24ceab725309d87f0619c" },
+  "conform.nvim": { "branch": "master", "commit": "f9ef25a7ef00267b7d13bfc00b0dea22d78702d5" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "mini.completion": { "branch": "main", "commit": "9e6aa17fef2e86d3f33666a7843b942791cc1c1f" },
   "mini.diff": { "branch": "main", "commit": "e4a59a8a22d9afeeaac92e3cb3fbd8ff5dc8e310" },
